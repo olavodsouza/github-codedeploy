@@ -25,25 +25,28 @@
             },
         "modulesUrl": {
             "type": "string",
-            "defaultValue": "https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip",
+            "defaultValue": "https://olavoteststd.blob.core.windows.net/windows-powershell-dsc/Provision-VM.ps1.zip",
             "metadata": {
                 "description": "URL for the DSC configuration package. NOTE: Can be a Github url(raw) to the zip file (this is the default value)"
             }
         },
+        "sasToken": {
+            "type": "string"
+          },
         "configurationFunction": {
             "type": "string",
-            "defaultValue": "UpdateLCMforAAPull.ps1\\ConfigureLCMforAAPull",
+            "defaultValue": "Provision-VM.ps1\\FileResourceDemo",
             "metadata": {
                 "description": "DSC configuration function to call. Should contain filename and function in format fileName.ps1\\configurationfunction"
             }
         },
-        "registrationKey": {
+        "registrationKey-Env-Specific": {
             "type": "securestring",
             "metadata": {
                 "description": "Registration key to use to onboard to the Azure Automation DSC pull/reporting server"
             }
         },
-        "registrationUrl": {
+        "registrationUrl-Env-Specific": {
             "type": "string",
             "metadata": {
                 "description": "Registration url of the Azure Automation DSC pull/reporting server"
@@ -114,6 +117,19 @@
         }
     },
     "variables": {
+        "environmentSettings": {
+            "test": {
+                "registrationKey": "",
+                "registrationUrl": ""
+            },
+            "prod": {
+                "registrationKey": "",
+                "registrationUrl": ""
+            }
+        },
+        "currentEnvironmentSettings": "[variables('environmentSettings')[parameters('environmentName')]]",
+        "registrationKey": "[variables('currentEnvironmentSettings').registrationKey]",
+        "registrationUrl": "[variables('currentEnvironmentSettings').registrationUrl]"
 
     },
     "resources": [
@@ -129,12 +145,12 @@
             "autoUpgradeMinorVersion": true,
             "protectedSettings": {
                 "Items": {
-                    "registrationKeyPrivate": "[parameters('registrationKey')]"
+                    "registrationKeyPrivate": "[variables('registrationKey')]"
                 }
             },
             "settings": {
                 "ModulesUrl": "[parameters('modulesUrl')]",
-                "SasToken": "",
+                "sasToken": "[parameters('sasToken')]",
                 "ConfigurationFunction": "[parameters('configurationFunction')]",
                 "Properties": [
                     {
@@ -147,7 +163,7 @@
                     },
                     {
                         "Name": "RegistrationUrl",
-                        "Value": "[parameters('registrationUrl')]",
+                        "Value": "[variables('registrationUrl')]",
                         "TypeName": "System.String"
                     },
                     {
