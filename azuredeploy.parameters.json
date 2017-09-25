@@ -6,10 +6,10 @@
             "value": "DSCSQLServer"
         },
         "modulesUrl": {
-            "value": "github-codedeploy/Provision-VM.ps1"
+            "value": "https://raw.githubusercontent.com/olavodsouza/github-codedeploy/master/Provision-VM.ps1.zip"
         },
         "configurationFunction": {
-            "value": "https://github.com/olavodsouza/github-codedeploy/blob/master/Provision-VM.ps1"
+            "value": "Provision-VM.ps1\\FileResourceDemo"
         },
         "registrationKey": {
             "value": "EJn5b/5tTkozzUZeHnzzErxY1ZrtX2fB1euhegGVYuTSI7V3Vdtq7yjeIHgGb8btKI/XoObsBlyCP2Cb/FSSoA=="
