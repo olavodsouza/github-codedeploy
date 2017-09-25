@@ -6,7 +6,7 @@
             "value": "DSCSQLServer"
         },
         "modulesUrl": {
-            "value": "https://olavoteststd.blob.core.windows.net/windows-powershell-dsc/Provision-VM.ps1.zip"
+            "value": "https://olavoteststd.blob.core.windows.net/Provision-VM.ps1.zip"
         },
         "configurationFunction": {
             "value": "Provision-VM.ps1\\FileResourceDemo"
