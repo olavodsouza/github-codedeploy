@@ -64,6 +64,10 @@
                 "description": "DSC agent (LCM) refresh frequency setting, in minutes"
             }
         },
+        "sasToken": {
+            "type": "string",
+            "defaultValue": "?sv=2017-04-17&ss=bfqt&srt=sco&sp=rwdlacup&se=2017-10-20T20:15:59Z&st=2017-09-25T12:15:59Z&spr=https&sig=sgb4Bn4lxWelExJfYcDaigqGQhEwZkXyNnrHkLNWnHU%3D"
+        },
         "rebootNodeIfNeeded": {
             "type": "bool",
             "defaultValue": true,
@@ -117,7 +121,7 @@
             },
             "settings": {
                 "ModulesUrl": "[parameters('modulesUrl')]",
-                "SasToken": "",
+                "SasToken": "[parameters('sasToken')",
                 "ConfigurationFunction": "[parameters('configurationFunction')]",
                 "Properties": [
                     {
