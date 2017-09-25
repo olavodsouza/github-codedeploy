@@ -3,19 +3,19 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "vmName": {
-            "value": "myVM001"
+            "value": "DSCSQLServer"
         },
         "modulesUrl": {
-            "value": "https://github.com/Azure/azure-quickstart-templates/raw/master/dsc-extension-azure-automation-pullserver/UpdateLCMforAAPull.zip"
+            "value": "https://olavoteststd.blob.core.windows.net/windows-powershell-dsc/Provision-VM.ps1.zip"
         },
         "configurationFunction": {
-            "value": "UpdateLCMforAAPull.ps1\\ConfigureLCMforAAPull"
+            "value": "Provision-VM.ps1\\FileResourceDemo"
         },
         "registrationKey": {
-            "value": ""
+            "value": "EJn5b/5tTkozzUZeHnzzErxY1ZrtX2fB1euhegGVYuTSI7V3Vdtq7yjeIHgGb8btKI/XoObsBlyCP2Cb/FSSoA=="
         },
         "registrationUrl": {
-            "value": ""
+            "value": "https://scus-agentservice-prod-1.azure-automation.net/accounts/e9114fde-8530-4f4d-8228-bbc60f3a6dc0"
         },
         "nodeConfigurationName": {
             "value": ""
@@ -39,7 +39,7 @@
             "value": false
         },
         "timestamp": {
-            "value": "MM/dd/yyyy H:mm:ss tt"
+            "value": "22/09/2017 20:30:15 00"
         }
     }
 }
