@@ -6,7 +6,7 @@
             "value": "DSCSQLServer"
         },
         "modulesUrl": {
-            "value": "https://raw.githubusercontent.com/olavodsouza/github-codedeploy/master/Provision-VM.ps1.zip"
+            "value": "https://github.com/olavodsouza/github-codedeploy/raw/master/Provision-VM.ps1.zip"
         },
         "configurationFunction": {
             "value": "Provision-VM.ps1\\FileResourceDemo"
